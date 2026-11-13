@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Developer | خرید VPN پایدار و تخصصی برنامه‌نویسان (ClickVPN)</title>
+    <meta name="description" content="ارائه سرویس‌های اختصاصی Click Pro و Click Plus با IP تمیز، بدون نشت DNS و دسترسی پایدار به GitHub, OpenAI, Gemini, Docker و بیش از ۲۷ کشور.">
+    <meta name="keywords" content="خرید VPN, فیلترشکن برنامه نویسی, ClickVPN, Click Developer, رفع تحریم هوش مصنوعی, تست نشت DNS, آی پی ثابت">
+    
+    <!-- فونت وزیرمتن -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    
+    <style>
+        :root {
+            --bg-dark: #0b1120;
+            --card-bg: #1e293b;
+            --card-border: #334155;
+            --primary: #3b82f6;
+            --primary-glow: rgba(59, 130, 246, 0.3);
+            --accent: #10b981;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* هدر و بخش معرفی */
+        header {
+            background: radial-gradient(circle at top center, #1e3a8a 0%, var(--bg-dark) 70%);
+            padding: 60px 20px 40px;
+            text-align: center;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            background: linear-gradient(to left, #ffffff, #93c5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            max-width: 720px;
+            margin: 0 auto 30px;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 20px var(--primary-glow);
+        }
+
+        .btn-primary:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            border: 1px solid var(--card-border);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #64748b;
+        }
+
+        /* کانتینر اصلی */
+        .container {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .section-desc {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        /* کارت‌های پلن‌ها */
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .plan-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 30px;
+            position: relative;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .plan-card.pro {
+            border-top: 4px solid var(--primary);
+            background: linear-gradient(180deg, rgba(30, 58, 138, 0.25) 0%, var(--card-bg) 100%);
+        }
+
+        .plan-card.plus {
+            border-top: 4px solid var(--accent);
+        }
+
+        .plan-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .plan-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .plan-tag {
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .tag-pro { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
+        .tag-plus { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+
+        .stats-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .stat-box {
+            flex: 1;
+            background: rgba(15, 23, 42, 0.6);
+            padding: 12px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .stat-box strong {
+            display: block;
+            font-size: 1.1rem;
+            color: #fff;
+        }
+
+        .stat-box span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .flags-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0 25px;
+        }
+
+        .flag-item {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid var(--card-border);
+            padding: 5px 10px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .services-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .services-list li {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            color: #e2e8f0;
+        }
+
+        .tools-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+        }
+
+        .tool-pill {
+            background: rgba(59, 130, 246, 0.12);
+            color: #93c5fd;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-family: monospace;
+        }
+
+        /* بخش مقالات سئو */
+        .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .guide-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 25px;
+            border-radius: 16px;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: 0.3s;
+        }
+
+        .guide-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .guide-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            color: #38bdf8;
+        }
+
+        .guide-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* فوتر */
+        footer {
+            background: #070b14;
+            border-top: 1px solid var(--card-border);
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .support-hours {
+            display: inline-block;
+            background: var(--card-bg);
+            padding: 10px 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 1px solid var(--card-border);
+            color: var(--text-main);
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .plans-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="badge">مهندسی شبکه و امنیت | زیرساخت Cisco & Microsoft</div>
+        <h1>Click Developer | دو انتخاب برای دنیای آنلاین شما</h1>
+        <p class="subtitle">
+            سلام! من <strong>قادری</strong> هستم. زیرساخت <strong>ClickVPN</strong> با هدف حذف محدودیت‌ها، ارائه IP تمیز و دسترسی بدون خطا به ابزارهای برنامه‌نویسی، هوش مصنوعی و سرویس‌های ابری طراحی شده است.
+        </p>
+        <div class="cta-group">
+            <a href="https://t.me/clickvpnpro_bot" target="_blank" class="btn btn-primary">🤖 دریافت تست رایگان و خرید در ربات</a>
+            <a href="https://t.me/panelClickVpn" target="_blank" class="btn btn-outline">📢 کانال تلگرام Click Developer</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">💎 سرویس‌های فعال و لوکیشن‌ها</h2>
+        <p class="section-desc">انتخاب بین دسترسی تخصصی توسعه‌دهندگان یا سرعت و پایداری روزمره</p>
+
+        <div class="plans-grid">
+            <!-- کارت Click Pro -->
+            <div class="plan-card pro">
+                <div class="plan-header">
+                    <div class="plan-title">🚀 Click Pro (Developer)</div>
+                    <span class="plan-tag tag-pro">دسترسی حرفه‌ای + API</span>
+                </div>
+
+                <div class="stats-row">
+                    <div class="stat-box">
+                        <strong>۲۷ کشور + G1</strong>
+                        <span>تنوع لوکیشن</span>
+                    </div>
+                    <div class="stat-box">
+                        <strong>۲۸ اتصال</strong>
+                        <span>ظرفیت سرورها</span>
+                    </div>
+                    <div class="stat-box">
+                        <strong>۲ تا ۱۰ کاربر</strong>
+                        <span>شخصی / تیمی</span>
+                    </div>
+                </div>
+
+                <h4>🏳️ لیست لوکیشن‌های فعال:</h4>
+                <div class="flags-grid">
+                    <span class="flag-item">⚡ سرور ویژه G1</span>
+                    <span class="flag-item">🇹🇷 ترکیه</span>
+                    <span class="flag-item">🇺🇸 آمریکا</span>
+                    <span class="flag-item">🇬🇧 انگلستان</span>
+                    <span class="flag-item">🇫🇷 فرانسه</span>
+                    <span class="flag-item">🇩🇪 آلمان</span>
+                    <span class="flag-item">🇫🇮 فنلاند</span>
+                    <span class="flag-item">🇳🇱 هلند</span>
+                    <span class="flag-item">🇮🇪 ایرلند</span>
+                    <span class="flag-item">🇸🇮 اسلوونی</span>
+                    <span class="flag-item">🇮🇹 ایتالیا</span>
+                    <span class="flag-item">🇩🇰 دانمارک</span>
+                    <span class="flag-item">🇳🇴 نروژ</span>
+                    <span class="flag-item">🇨🇭 سوئیس</span>
+                    <span class="flag-item">🇦🇿 آذربایجان</span>
+                    <span class="flag-item">🇪🇸 اسپانیا</span>
+                    <span class="flag-item">🇵🇹 پرتغال</span>
+                    <span class="flag-item">🇨🇿 چک</span>
+                    <span class="flag-item">🇨🇦 کانادا</span>
+                    <span class="flag-item">🇧🇬 بلغارستان</span>
+                    <span class="flag-item">🇧🇪 بلژیک</span>
+                    <span class="flag-item">🇦🇹 اتریش</span>
+                    <span class="flag-item">🇦🇪 امارات</span>
+                    <span class="flag-item">🇺🇦 اوکراین</span>
+                    <span class="flag-item">🇱🇺 لوکزامبورگ</span>
+                    <span class="flag-item">🇸🇪 سوئد</span>
+                    <span class="flag-item">🇦🇱 آلبانی</span>
+                    <span class="flag-item">🇱🇻 لتونی</span>
+                </div>
+
+                <h4>🛠 پلتفرم‌ها و ابزارهای پشتیبانی‌شده:</h4>
+                <div class="tools-badges">
+                    <span class="tool-pill">GitHub</span>
+                    <span class="tool-pill">GitLab</span>
+                    <span class="tool-pill">Docker Hub</span>
+                    <span class="tool-pill">Figma</span>
+                    <span class="tool-pill">Vercel</span>
+                    <span class="tool-pill">Cursor</span>
+                    <span class="tool-pill">Google AI Studio</span>
+                    <span class="tool-pill">Gemini</span>
+                    <span class="tool-pill">OpenAI</span>
+                    <span class="tool-pill">Cloudflare</span>
+                    <span class="tool-pill">AWS / GCP / Azure</span>
+                </div>
+            </div>
+
+            <!-- کارت Click Plus -->
+            <div class="plan-card plus">
+                <div class="plan-header">
+                    <div class="plan-title">🌐 Click Plus</div>
+                    <span class="plan-tag tag-plus">وب | سوشال | AI</span>
+                </div>
+
+                <div class="stats-row">
+                    <div class="stat-box">
+                        <strong>۶ کشور کلیدی</strong>
+                        <span>پوشش پایدار</span>
+                    </div>
+                    <div class="stat-box">
+                        <strong>۷ سرور</strong>
+                        <span>زیرساخت پرسرعت</span>
+                    </div>
+                    <div class="stat-box">
+                        <strong>شخصی</strong>
+                        <span>نوع کاربری</span>
+                    </div>
+                </div>
+
+                <h4>🏳️ لیست لوکیشن‌های فعال:</h4>
+                <div class="flags-grid">
+                    <span class="flag-item">🇩🇪 آلمان</span>
+                    <span class="flag-item">🇹🇷 ترکیه</span>
+                    <span class="flag-item">🇳🇱 هلند</span>
+                    <span class="flag-item">🇺🇸 آمریکا</span>
+                    <span class="flag-item">🇬🇧 انگلستان</span>
+                    <span class="flag-item">🇷🇺 روسیه</span>
+                </div>
+
+                <h4>🎯 دسترسی‌های اصلی:</h4>
+                <ul class="services-list">
+                    <li>✅ <strong>AI Chat:</strong> اتصال پایدار به چت‌بات‌های هوش مصنوعی</li>
+                    <li>✅ <strong>Social:</strong> دسترسی سریع به تلگرام، اینستاگرام، یوتیوب، لینکدین و X</li>
+                    <li>✅ <strong>Web:</strong> مرور ایمن و بدون قطعی وب‌سایت‌ها</li>
+                    <li>✅ <strong>Custom Routing:</strong> امکان درخواست باز کردن دسترسی برای سایت‌های خاص</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- بخش مقالات فنی برای سئو -->
+        <h2 class="section-title">📚 آموزش‌های تخصصی امنیت و شبکه</h2>
+        <p class="section-desc">بررسی امنیت اتصال، جلوگیری از نشت IP و رفع خطاهای تحریم</p>
+
+        <div class="guides-grid">
+            <a href="./dns-leak-guide.html" class="guide-card">
+                <h3>🔍 تست نشت DNS (DNS Leak) چیست؟</h3>
+                <p>آموزش ۴ مرحله‌ای بررسی امنیت اتصال VPN و اطمینان از عدم افشای درخواست‌های DNS به ارائه‌دهنده اینترنت.</p>
+            </a>
+            <a href="./ai-and-dev-access.html" class="guide-card">
+                <h3>🤖 رفع تحریم هوش مصنوعی و ابزارهای توسعه</h3>
+                <p>چرا با وجود روشن بودن VPN با خطای 403 در Gemini، OpenAI و Docker مواجه می‌شویم و راهکار IP تمیز چیست؟</p>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="support-hours">
+            ⏲ ساعات پاسخگویی پشتیبانی فنی: <strong>۰۸:۳۰ تا ۱۲:۰۰</strong> و <strong>۱۴:۰۰ تا ۲۱:۰۰</strong>
+        </div>
+        <p>کلیک؛ پایدار در مسیر توسعه ⚡ | طراحی و توسعه زیرساخت توسط <strong>Click Developer</strong></p>
+    </footer>
+
+</body>
+</html>
