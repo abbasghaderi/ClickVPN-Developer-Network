@@ -1,475 +1,362 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Click Developer | خرید VPN پایدار و تخصصی برنامه‌نویسان (ClickVPN)</title>
-    <meta name="description" content="ارائه سرویس‌های اختصاصی Click Pro و Click Plus با IP تمیز، بدون نشت DNS و دسترسی پایدار به GitHub, OpenAI, Gemini, Docker و بیش از ۲۷ کشور.">
-    <meta name="keywords" content="خرید VPN, فیلترشکن برنامه نویسی, ClickVPN, Click Developer, رفع تحریم هوش مصنوعی, تست نشت DNS, آی پی ثابت">
-    
-    <!-- فونت وزیرمتن -->
-    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
-    
-    <style>
-        :root {
-            --bg-dark: #0b1120;
-            --card-bg: #1e293b;
-            --card-border: #334155;
-            --primary: #3b82f6;
-            --primary-glow: rgba(59, 130, 246, 0.3);
-            --accent: #10b981;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Vazirmatn', Tahoma, sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        /* هدر و بخش معرفی */
-        header {
-            background: radial-gradient(circle at top center, #1e3a8a 0%, var(--bg-dark) 70%);
-            padding: 60px 20px 40px;
-            text-align: center;
-            border-bottom: 1px solid var(--card-border);
-        }
-
-        .badge {
-            display: inline-block;
-            background: rgba(59, 130, 246, 0.15);
-            color: #60a5fa;
-            border: 1px solid rgba(59, 130, 246, 0.4);
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            margin-bottom: 16px;
-        }
-
-        h1 {
-            font-size: 2.4rem;
-            font-weight: 800;
-            margin-bottom: 15px;
-            background: linear-gradient(to left, #ffffff, #93c5fd);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .subtitle {
-            max-width: 720px;
-            margin: 0 auto 30px;
-            color: var(--text-muted);
-            font-size: 1.05rem;
-        }
-
-        .cta-group {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 28px;
-            border-radius: 12px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 4px 20px var(--primary-glow);
-        }
-
-        .btn-primary:hover {
-            background: #2563eb;
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-main);
-            border: 1px solid var(--card-border);
-        }
-
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: #64748b;
-        }
-
-        /* کانتینر اصلی */
-        .container {
-            max-width: 1150px;
-            margin: 0 auto;
-            padding: 50px 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        .section-desc {
-            text-align: center;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-        }
-
-        /* کارت‌های پلن‌ها */
-        .plans-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-
-        .plan-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
-            padding: 30px;
-            position: relative;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .plan-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-        }
-
-        .plan-card.pro {
-            border-top: 4px solid var(--primary);
-            background: linear-gradient(180deg, rgba(30, 58, 138, 0.25) 0%, var(--card-bg) 100%);
-        }
-
-        .plan-card.plus {
-            border-top: 4px solid var(--accent);
-        }
-
-        .plan-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid var(--card-border);
-        }
-
-        .plan-title {
-            font-size: 1.5rem;
-            font-weight: 800;
-        }
-
-        .plan-tag {
-            padding: 4px 12px;
-            border-radius: 8px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .tag-pro { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
-        .tag-plus { background: rgba(16, 185, 129, 0.2); color: #34d399; }
-
-        .stats-row {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .stat-box {
-            flex: 1;
-            background: rgba(15, 23, 42, 0.6);
-            padding: 12px;
-            border-radius: 12px;
-            text-align: center;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .stat-box strong {
-            display: block;
-            font-size: 1.1rem;
-            color: #fff;
-        }
-
-        .stat-box span {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        .flags-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 15px 0 25px;
-        }
-
-        .flag-item {
-            background: rgba(15, 23, 42, 0.8);
-            border: 1px solid var(--card-border);
-            padding: 5px 10px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .services-list {
-            list-style: none;
-            margin-bottom: 25px;
-        }
-
-        .services-list li {
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-            color: #e2e8f0;
-        }
-
-        .tools-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 10px;
-        }
-
-        .tool-pill {
-            background: rgba(59, 130, 246, 0.12);
-            color: #93c5fd;
-            padding: 3px 10px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-family: monospace;
-        }
-
-        /* بخش مقالات سئو */
-        .guides-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-bottom: 50px;
-        }
-
-        .guide-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            padding: 25px;
-            border-radius: 16px;
-            text-decoration: none;
-            color: var(--text-main);
-            transition: 0.3s;
-        }
-
-        .guide-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-3px);
-        }
-
-        .guide-card h3 {
-            font-size: 1.15rem;
-            margin-bottom: 10px;
-            color: #38bdf8;
-        }
-
-        .guide-card p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        /* فوتر */
-        footer {
-            background: #070b14;
-            border-top: 1px solid var(--card-border);
-            padding: 40px 20px;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .support-hours {
-            display: inline-block;
-            background: var(--card-bg);
-            padding: 10px 25px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            border: 1px solid var(--card-border);
-            color: var(--text-main);
-        }
-
-        @media (max-width: 600px) {
-            h1 { font-size: 1.8rem; }
-            .plans-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#12191d">
+<title>دسترسی برای کسانی که می‌سازند | Click Developer</title>
+<meta name="description" content="کلیک دولوپر؛ معرفی Click Pro و Click Plus، خدمات دسترسی برای توسعه‌دهندگان و تیم‌ها، آموزش و پشتیبانی فنی.">
+<link rel="canonical" href="https://abbasghaderi.github.io/ClickVPN-Developer-Network/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:title" content="دسترسی برای کسانی که می‌سازند | Click Developer">
+<meta property="og:description" content="کلیک دولوپر؛ معرفی Click Pro و Click Plus، خدمات دسترسی برای توسعه‌دهندگان و تیم‌ها، آموزش و پشتیبانی فنی.">
+<meta property="og:url" content="https://abbasghaderi.github.io/ClickVPN-Developer-Network/">
+<meta property="og:image" content="https://abbasghaderi.github.io/ClickVPN-Developer-Network/assets/social-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="./assets/click-logo.png">
+<link rel="preload" href="./assets/vazirmatn-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="./assets/style.css">
+<script src="./assets/site.js" defer>
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "دسترسی برای کسانی که می‌سازند", "description": "کلیک دولوپر؛ معرفی Click Pro و Click Plus، خدمات دسترسی برای توسعه‌دهندگان و تیم‌ها، آموزش و پشتیبانی فنی.", "url": "https://abbasghaderi.github.io/ClickVPN-Developer-Network/", "inLanguage": "fa"}</script>
 </head>
 <body>
-
-    <header>
-        <div class="badge">مهندسی شبکه و امنیت | زیرساخت Cisco & Microsoft</div>
-        <h1>Click Developer | دو انتخاب برای دنیای آنلاین شما</h1>
-        <p class="subtitle">
-            سلام! من <strong>قادری</strong> هستم. زیرساخت <strong>ClickVPN</strong> با هدف حذف محدودیت‌ها، ارائه IP تمیز و دسترسی بدون خطا به ابزارهای برنامه‌نویسی، هوش مصنوعی و سرویس‌های ابری طراحی شده است.
-        </p>
-        <div class="cta-group">
-            <a href="https://t.me/clickvpnpro_bot" target="_blank" class="btn btn-primary">🤖 دریافت تست رایگان و خرید در ربات</a>
-            <a href="https://t.me/panelClickVpn" target="_blank" class="btn btn-outline">📢 کانال تلگرام Click Developer</a>
-        </div>
-    </header>
-
-    <div class="container">
-        <h2 class="section-title">💎 سرویس‌های فعال و لوکیشن‌ها</h2>
-        <p class="section-desc">انتخاب بین دسترسی تخصصی توسعه‌دهندگان یا سرعت و پایداری روزمره</p>
-
-        <div class="plans-grid">
-            <!-- کارت Click Pro -->
-            <div class="plan-card pro">
-                <div class="plan-header">
-                    <div class="plan-title">🚀 Click Pro (Developer)</div>
-                    <span class="plan-tag tag-pro">دسترسی حرفه‌ای + API</span>
-                </div>
-
-                <div class="stats-row">
-                    <div class="stat-box">
-                        <strong>۲۷ کشور + G1</strong>
-                        <span>تنوع لوکیشن</span>
-                    </div>
-                    <div class="stat-box">
-                        <strong>۲۸ اتصال</strong>
-                        <span>ظرفیت سرورها</span>
-                    </div>
-                    <div class="stat-box">
-                        <strong>۲ تا ۱۰ کاربر</strong>
-                        <span>شخصی / تیمی</span>
-                    </div>
-                </div>
-
-                <h4>🏳️ لیست لوکیشن‌های فعال:</h4>
-                <div class="flags-grid">
-                    <span class="flag-item">⚡ سرور ویژه G1</span>
-                    <span class="flag-item">🇹🇷 ترکیه</span>
-                    <span class="flag-item">🇺🇸 آمریکا</span>
-                    <span class="flag-item">🇬🇧 انگلستان</span>
-                    <span class="flag-item">🇫🇷 فرانسه</span>
-                    <span class="flag-item">🇩🇪 آلمان</span>
-                    <span class="flag-item">🇫🇮 فنلاند</span>
-                    <span class="flag-item">🇳🇱 هلند</span>
-                    <span class="flag-item">🇮🇪 ایرلند</span>
-                    <span class="flag-item">🇸🇮 اسلوونی</span>
-                    <span class="flag-item">🇮🇹 ایتالیا</span>
-                    <span class="flag-item">🇩🇰 دانمارک</span>
-                    <span class="flag-item">🇳🇴 نروژ</span>
-                    <span class="flag-item">🇨🇭 سوئیس</span>
-                    <span class="flag-item">🇦🇿 آذربایجان</span>
-                    <span class="flag-item">🇪🇸 اسپانیا</span>
-                    <span class="flag-item">🇵🇹 پرتغال</span>
-                    <span class="flag-item">🇨🇿 چک</span>
-                    <span class="flag-item">🇨🇦 کانادا</span>
-                    <span class="flag-item">🇧🇬 بلغارستان</span>
-                    <span class="flag-item">🇧🇪 بلژیک</span>
-                    <span class="flag-item">🇦🇹 اتریش</span>
-                    <span class="flag-item">🇦🇪 امارات</span>
-                    <span class="flag-item">🇺🇦 اوکراین</span>
-                    <span class="flag-item">🇱🇺 لوکزامبورگ</span>
-                    <span class="flag-item">🇸🇪 سوئد</span>
-                    <span class="flag-item">🇦🇱 آلبانی</span>
-                    <span class="flag-item">🇱🇻 لتونی</span>
-                </div>
-
-                <h4>🛠 پلتفرم‌ها و ابزارهای پشتیبانی‌شده:</h4>
-                <div class="tools-badges">
-                    <span class="tool-pill">GitHub</span>
-                    <span class="tool-pill">GitLab</span>
-                    <span class="tool-pill">Docker Hub</span>
-                    <span class="tool-pill">Figma</span>
-                    <span class="tool-pill">Vercel</span>
-                    <span class="tool-pill">Cursor</span>
-                    <span class="tool-pill">Google AI Studio</span>
-                    <span class="tool-pill">Gemini</span>
-                    <span class="tool-pill">OpenAI</span>
-                    <span class="tool-pill">Cloudflare</span>
-                    <span class="tool-pill">AWS / GCP / Azure</span>
-                </div>
-            </div>
-
-            <!-- کارت Click Plus -->
-            <div class="plan-card plus">
-                <div class="plan-header">
-                    <div class="plan-title">🌐 Click Plus</div>
-                    <span class="plan-tag tag-plus">وب | سوشال | AI</span>
-                </div>
-
-                <div class="stats-row">
-                    <div class="stat-box">
-                        <strong>۶ کشور کلیدی</strong>
-                        <span>پوشش پایدار</span>
-                    </div>
-                    <div class="stat-box">
-                        <strong>۷ سرور</strong>
-                        <span>زیرساخت پرسرعت</span>
-                    </div>
-                    <div class="stat-box">
-                        <strong>شخصی</strong>
-                        <span>نوع کاربری</span>
-                    </div>
-                </div>
-
-                <h4>🏳️ لیست لوکیشن‌های فعال:</h4>
-                <div class="flags-grid">
-                    <span class="flag-item">🇩🇪 آلمان</span>
-                    <span class="flag-item">🇹🇷 ترکیه</span>
-                    <span class="flag-item">🇳🇱 هلند</span>
-                    <span class="flag-item">🇺🇸 آمریکا</span>
-                    <span class="flag-item">🇬🇧 انگلستان</span>
-                    <span class="flag-item">🇷🇺 روسیه</span>
-                </div>
-
-                <h4>🎯 دسترسی‌های اصلی:</h4>
-                <ul class="services-list">
-                    <li>✅ <strong>AI Chat:</strong> اتصال پایدار به چت‌بات‌های هوش مصنوعی</li>
-                    <li>✅ <strong>Social:</strong> دسترسی سریع به تلگرام، اینستاگرام، یوتیوب، لینکدین و X</li>
-                    <li>✅ <strong>Web:</strong> مرور ایمن و بدون قطعی وب‌سایت‌ها</li>
-                    <li>✅ <strong>Custom Routing:</strong> امکان درخواست باز کردن دسترسی برای سایت‌های خاص</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- بخش مقالات فنی برای سئو -->
-        <h2 class="section-title">📚 آموزش‌های تخصصی امنیت و شبکه</h2>
-        <p class="section-desc">بررسی امنیت اتصال، جلوگیری از نشت IP و رفع خطاهای تحریم</p>
-
-        <div class="guides-grid">
-            <a href="./dns-leak-guide.html" class="guide-card">
-                <h3>🔍 تست نشت DNS (DNS Leak) چیست؟</h3>
-                <p>آموزش ۴ مرحله‌ای بررسی امنیت اتصال VPN و اطمینان از عدم افشای درخواست‌های DNS به ارائه‌دهنده اینترنت.</p>
-            </a>
-            <a href="./ai-and-dev-access.html" class="guide-card">
-                <h3>🤖 رفع تحریم هوش مصنوعی و ابزارهای توسعه</h3>
-                <p>چرا با وجود روشن بودن VPN با خطای 403 در Gemini، OpenAI و Docker مواجه می‌شویم و راهکار IP تمیز چیست؟</p>
-            </a>
-        </div>
-    </div>
-
-    <footer>
-        <div class="support-hours">
-            ⏲ ساعات پاسخگویی پشتیبانی فنی: <strong>۰۸:۳۰ تا ۱۲:۰۰</strong> و <strong>۱۴:۰۰ تا ۲۱:۰۰</strong>
-        </div>
-        <p>کلیک؛ پایدار در مسیر توسعه ⚡ | طراحی و توسعه زیرساخت توسط <strong>Click Developer</strong></p>
-    </footer>
-
+<a class="skip" href="#main">رفتن به محتوای اصلی</a>
+<header class="header">
+<div class="wrap nav">
+<a class="brand" href="./index.html" aria-label="کلیک دولوپر، صفحه اصلی">
+<img src="./assets/click-logo.png" width="48" height="48" alt="لوگوی کلیک">
+<span dir="ltr">CLICK<span class="brand-sub">DEVELOPER</span>
+</span>
+</a>
+<button class="menu" aria-expanded="false" aria-controls="navigation">منو <span aria-hidden="true">☰</span>
+</button>
+<nav id="navigation" aria-label="منوی اصلی">
+<a href="./index.html#services">سرویس‌ها</a>
+<a href="./index.html#business">تیم‌ها و سازمان‌ها</a>
+<a href="./guides.html">آکادمی کلیک</a>
+<a href="./index.html#faq">پرسش‌های متداول</a>
+</nav>
+<a class="button small nav-cta" href="https://t.me/clickvpnpro_bot">ورود به ربات <span aria-hidden="true">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+<path d="M19 12H5m6-6-6 6 6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+</a>
+</div>
+</header>
+<main id="main">
+<section class="hero wrap">
+<div class="hero-copy">
+<div class="eyebrow">
+<span class="line">
+</span> برای کسانی که می‌سازند</div>
+<h1>تمرکز روی ساختن.<br>
+<span>دسترسی، با کلیک.</span>
+</h1>
+<p class="lead">از اولین خط کد تا پروژه بعدی؛ سرویس دسترسی متناسب با کار شما، همراه با راهنمایی فنی و آموزش‌های کاربردی.</p>
+<div class="actions">
+<a class="button" href="#services">سرویس مناسب من <span aria-hidden="true">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+<path d="M19 12H5m6-6-6 6 6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+</a>
+<a class="text-link" href="./getting-started.html">چطور شروع کنم؟ <span aria-hidden="true">←</span>
+</a>
+</div>
+<div class="hero-note">
+<span>توسعه‌دهندگان</span>
+<i>
+</i>
+<span>متخصصان IT</span>
+<i>
+</i>
+<span>تیم‌های حرفه‌ای</span>
+</div>
+</div>
+<div class="network-art" role="img" aria-label="تصویر مفهومی ارتباط ابزارهای توسعه از طریق کلیک؛ نمایش وضعیت زنده نیست">
+<div class="orbit orbit-one">
+</div>
+<div class="orbit orbit-two">
+</div>
+<div class="orbit orbit-three">
+</div>
+<div class="axis x">
+</div>
+<div class="axis y">
+</div>
+<div class="network-core">
+<img src="./assets/click-logo.png" alt="" width="110" height="110">
+<span>YOUR NEXT CONNECTION</span>
+</div>
+<div class="node n1">
+<span class="node-icon">&lt;/&gt;</span>
+<span>Development<small>CODE. BUILD. SHIP.</small>
+</span>
+</div>
+<div class="node n2">
+<span class="node-icon">✳</span>
+<span>Artificial Intelligence<small>EXPLORE WHAT’S NEXT</small>
+</span>
+</div>
+<div class="node n3">
+<span class="node-icon">☁</span>
+<span>Cloud & DevOps<small>FROM LOCAL TO GLOBAL</small>
+</span>
+</div>
+<span class="art-label">CLICK / DEVELOPER NETWORK</span>
+<span class="art-index">01 — ACCESS</span>
+</div>
+</section>
+<div class="tool-strip">
+<div class="wrap">
+<span class="strip-title">ابزارهایی در مسیر کار شما</span>
+<div class="tool-names" dir="ltr">
+<span>GitHub</span>
+<span>Docker</span>
+<span>Figma</span>
+<span>Gemini</span>
+<span>OpenAI</span>
+<span>Vercel</span>
+</div>
+</div>
+</div>
+<section class="section wrap" id="services">
+<div class="section-head">
+<div>
+<div class="eyebrow">01 / سرویس‌ها</div>
+<h2>یک انتخاب، متناسب با کار شما.</h2>
+</div>
+<p>برای توسعه حرفه‌ای یا استفاده روزمره،<br>مسیر مناسب خودتان را انتخاب کنید.</p>
+</div>
+<div class="service-grid">
+<article class="service pro">
+<div class="service-top">
+<span class="tag">برای توسعه و کار حرفه‌ای</span>
+<span class="service-num">01</span>
+</div>
+<h3 dir="ltr">Click Pro<span>بیشتر از دسترسی روزمره.</span>
+</h3>
+<p>برای برنامه‌نویسان، متخصصان شبکه و تیم‌هایی که ابزارهای توسعه و هوش مصنوعی بخشی از کارشان است.</p>
+<ul class="checks">
+<li>تمرکز بر ابزارهای توسعه، سرویس‌های ابری و AI</li>
+<li>انتخاب بسته برای استفاده شخصی یا تیمی</li>
+<li>پیگیری فنی نیازهای دسترسی پروژه</li>
+</ul>
+<div class="product-tools" dir="ltr">GitHub / Docker / AI Studio / Figma</div>
+<a class="button" href="https://t.me/clickvpnpro_bot">مشاهده بسته‌های Pro <span aria-hidden="true">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+<path d="M19 12H5m6-6-6 6 6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+</a>
+<small class="service-foot">تست رایگان برای Click Pro فعال نیست.</small>
+</article>
+<article class="service plus">
+<div class="service-top">
+<span class="tag neutral">برای استفاده روزمره</span>
+<span class="service-num">02</span>
+</div>
+<h3 dir="ltr">Click Plus<span>همراه دنیای آنلاین شما.</span>
+</h3>
+<p>برای وب‌گردی، شبکه‌های اجتماعی و استفاده عمومی از ابزارهای آنلاین؛ با مسیر خرید و مدیریت اشتراک در ربات.</p>
+<ul class="checks">
+<li>مناسب وب و شبکه‌های اجتماعی</li>
+<li>متمرکز بر استفاده شخصی</li>
+<li>راهنمای شروع و پشتیبانی از طریق ربات</li>
+</ul>
+<div class="product-tools" dir="ltr">Web / Social / AI Chat</div>
+<a class="button secondary" href="https://t.me/clickvpnpro_bot">مشاهده بسته‌های Plus <span aria-hidden="true">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+<path d="M19 12H5m6-6-6 6 6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+</a>
+<small class="service-foot">شرایط هر بسته را پیش از خرید در ربات بخوانید.</small>
+</article>
+</div>
+<p class="fine-print">قیمت، حجم، مدت، تعداد کاربران و لوکیشن‌های قابل ارائه را در ربات بررسی کنید. دسترسی به سرویس‌های ثالث به شرایط همان پلتفرم و وضعیت شبکه وابسته است.</p>
+<div class="chooser">
+<div>
+<h3>هنوز بین دو سرویس مردد هستید؟</h3>
+<p>کاربرد اصلی‌تان را انتخاب کنید.</p>
+</div>
+<div class="choice-controls" role="group" aria-label="کاربرد اصلی">
+<button data-choice="dev" aria-pressed="true">توسعه و هوش مصنوعی</button>
+<button data-choice="daily" aria-pressed="false">استفاده روزمره</button>
+<button data-choice="team" aria-pressed="false">تیم و سازمان</button>
+</div>
+<p id="recommendation" aria-live="polite">پیشنهاد: Click Pro؛ نیاز ابزار یا API موردنظرتان را پیش از خرید با پشتیبانی مطرح کنید.</p>
+</div>
+</section>
+<section class="business" id="business">
+<div class="wrap business-grid">
+<div>
+<div class="eyebrow">02 / CLICK FOR TEAMS</div>
+<h2>تیم شما می‌سازد.<br>ما کنار مسیر هستیم.</h2>
+<p>برای تیم‌های توسعه، مجموعه‌های پژوهشی و واحدهای دانشگاهی، نیاز دسترسی را بر اساس ابزارها و تعداد اعضای تیم بررسی می‌کنیم.</p>
+<a class="button light" href="https://t.me/clickvpnpro_bot">گفت‌وگو درباره نیاز تیم <span aria-hidden="true">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+<path d="M19 12H5m6-6-6 6 6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+</a>
+</div>
+<div class="business-steps">
+<div>
+<b>01</b>
+<span>
+<strong>نیازتان را تعریف کنید</strong>
+<small>ابزارها، تعداد اعضا و نوع استفاده تیم را مشخص کنید.</small>
+</span>
+</div>
+<div>
+<b>02</b>
+<span>
+<strong>شرایط سرویس را بررسی کنیم</strong>
+<small>ظرفیت، محدودیت‌ها و روش پشتیبانی قبل از خرید روشن می‌شود.</small>
+</span>
+</div>
+<div>
+<b>03</b>
+<span>
+<strong>دسترسی را در تیم نگه دارید</strong>
+<small>اشتراک سازمانی برای اعضای تأییدشده است؛ انتشار عمومی لینک مجاز نیست.</small>
+</span>
+</div>
+</div>
+</div>
+</section>
+<section class="section wrap" id="academy">
+<div class="section-head">
+<div>
+<div class="eyebrow">03 / CLICK ACADEMY</div>
+<h2>دسترسی بهتر، با شناخت بیشتر.</h2>
+</div>
+<a class="text-link" href="./guides.html">همه آموزش‌ها ←</a>
+</div>
+<div class="guides-grid">
+<a class="guide-card" href="./dns-leak-guide.html" data-category="security">
+<div class="guide-art art-security">
+<span>DNS</span>
+<i aria-hidden="true">↗</i>
+</div>
+<div class="guide-body">
+<small>امنیت اتصال</small>
+<h3>نشت DNS را درست بررسی کنیم</h3>
+<p>از معنی نتیجه تست تا تفاوت DNS و IP خروجی.</p>
+<span class="read-more">مطالعه راهنما ←</span>
+</div>
+</a>
+<a class="guide-card" href="./ai-and-dev-access.html" data-category="development">
+<div class="guide-art art-development">
+<span>403</span>
+<i aria-hidden="true">↗</i>
+</div>
+<div class="guide-body">
+<small>ابزارهای توسعه</small>
+<h3>چرا ابزار AI باز نمی‌شود؟</h3>
+<p>یک مسیر مرحله‌ای برای بررسی خطاهای دسترسی.</p>
+<span class="read-more">مطالعه راهنما ←</span>
+</div>
+</a>
+<a class="guide-card" href="./getting-started.html" data-category="start">
+<div class="guide-art art-start">
+<span>START</span>
+<i aria-hidden="true">↗</i>
+</div>
+<div class="guide-body">
+<small>راهنمای شروع</small>
+<h3>از انتخاب سرویس تا اولین اتصال</h3>
+<p>چهار قدم روشن برای شروع کار با کلیک.</p>
+<span class="read-more">مطالعه راهنما ←</span>
+</div>
+</a>
+</div>
+</section>
+<section class="section wrap faq-section" id="faq">
+<div>
+<div class="eyebrow">04 / پاسخ‌های روشن</div>
+<h2>قبل از شروع،<br>بیشتر بدانید.</h2>
+<p class="muted">پاسخ سؤال‌تان اینجا نیست؟</p>
+<a class="text-link" href="https://t.me/clickvpnpro_bot">از پشتیبانی بپرسید ↗</a>
+</div>
+<div>
+<details>
+<summary>تفاوت Click Pro و Click Plus چیست؟</summary>
+<p>Click Pro برای نیازهای توسعه، ابزارهای ابری و هوش مصنوعی معرفی شده است. Click Plus بر استفاده شخصی، وب و شبکه‌های اجتماعی تمرکز دارد. برای یک ابزار خاص، پیش از خرید وضعیت دسترسی را از پشتیبانی بپرسید.</p>
+</details>
+<details>
+<summary>قیمت‌ها و تعداد کاربران هر بسته را کجا ببینم؟</summary>
+<p>مرجع قیمت و مشخصات بسته‌ها ربات رسمی کلیک است. حجم، مدت اعتبار، تعداد کاربران و شرایط تمدید را پیش از پرداخت در همان ربات بررسی کنید.</p>
+</details>
+<details>
+<summary>آیا امکان تست رایگان وجود دارد؟</summary>
+<p>تست رایگان در سرویس Click Pro فعال نیست. شرایط احتمالی سایر سرویس‌ها را در ربات بررسی کنید.</p>
+</details>
+<details>
+<summary>آیا اشتراک کلیک شامل اشتراک پولی ابزارهای AI هم می‌شود؟</summary>
+<p>خیر. سرویس دسترسی شبکه با اشتراک پولی پلتفرم‌ها یا اعتبار API متفاوت است. تهیه حساب و اشتراک ابزارها تابع شرایط همان ارائه‌دهنده است.</p>
+</details>
+<details>
+<summary>در صورت خطای اتصال چه اطلاعاتی ارسال کنم؟</summary>
+<p>نام برنامه و نسخه آن، نوع اینترنت، زمان بروز خطا و تصویر خطا را برای پشتیبانی بفرستید. لینک اشتراک، رمز عبور یا کلید API را در پیام عمومی و تصویر قابل انتشار قرار ندهید.</p>
+</details>
+<details>
+<summary>آیا دسترسی به همه ابزارها همیشه تضمین می‌شود؟</summary>
+<p>خیر. وضعیت شبکه، سیاست‌های منطقه‌ای، محدودیت حساب و تغییرات ارائه‌دهنده ابزار بر دسترسی اثر دارند. برای نیازهای حساس پروژه، وضعیت ابزار موردنظر را پیش از خرید بررسی کنید.</p>
+</details>
+</div>
+</section>
+<section class="wrap about">
+<div class="eyebrow">پشت کلیک</div>
+<h2>از شناخت شبکه، تا همراهی در توسعه.</h2>
+<p>من عباس قادری هستم؛ فعال در حوزه شبکه و امنیت با تمرکز بر Cisco و Microsoft. کلیک دولوپر را با یک هدف پیش می‌برم: کمک به مسیر کاری توسعه‌دهندگان، با خدمات دسترسی و محتوای فنی قابل‌فهم.</p>
+<span dir="ltr">ABBAS GHADERI / CLICK DEVELOPER</span>
+</section>
+<section class="wrap final-cta">
+<div>
+<span class="eyebrow">قدم بعدی شما</span>
+<h2>برای پروژه بعدی آماده‌اید؟</h2>
+<p>بسته‌ها را ببینید یا درباره نیازتان با ما صحبت کنید.</p>
+</div>
+<a class="button" href="https://t.me/clickvpnpro_bot">شروع با کلیک <span aria-hidden="true">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+<path d="M19 12H5m6-6-6 6 6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+</a>
+</section>
+</main>
+<footer class="footer">
+<div class="wrap footer-grid">
+<div>
+<a class="brand" href="./index.html">
+<span dir="ltr">CLICK<span class="brand-sub">DEVELOPER</span>
+</span>
+</a>
+<p>کلیک؛ پایدار در مسیر توسعه.</p>
+<p class="muted">شبکه، دسترسی و یادگیری؛ برای کسانی که می‌سازند.</p>
+</div>
+<div>
+<h3>کشف کنید</h3>
+<a href="./index.html#services">انتخاب سرویس</a>
+<a href="./getting-started.html">راهنمای شروع</a>
+<a href="./guides.html">آکادمی کلیک</a>
+</div>
+<div>
+<h3>در ارتباط بمانیم</h3>
+<a href="https://t.me/clickvpnpro_bot">ربات خرید و پشتیبانی ↗</a>
+<a href="https://t.me/panelClickVpn">کانال اطلاع‌رسانی ↗</a>
+<a href="./privacy.html">حریم خصوصی و شرایط استفاده</a>
+</div>
+</div>
+<div class="wrap footer-bottom">
+<span>© ۲۰۲۶ کلیک دولوپر</span>
+<span dir="ltr">BUILT FOR PEOPLE WHO BUILD.</span>
+</div>
+</footer>
 </body>
 </html>
