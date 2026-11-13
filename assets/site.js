@@ -12,3 +12,6 @@ document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListen
 
 const currentFile=location.pathname.split("/").pop()||"index.html";
 document.querySelectorAll("#navigation a").forEach(a=>{const u=new URL(a.href);if(u.origin===location.origin&&!u.hash&&u.pathname.split("/").pop()===currentFile)a.setAttribute("aria-current","page");});
+document.querySelectorAll('.motion-toggle').forEach(button=>button.addEventListener('click',()=>{const paused=button.closest('.flag-marquee').classList.toggle('is-paused');button.setAttribute('aria-pressed',String(paused));button.textContent=paused?'ادامه حرکت':'توقف حرکت';}));
+function updateActiveNavigation(){const here=new URL(location.href);document.querySelectorAll('#navigation a').forEach(a=>{const u=new URL(a.href);const sameFile=(u.pathname.split('/').pop()||'index.html')===(here.pathname.split('/').pop()||'index.html');const active=u.origin===here.origin&&sameFile&&u.hash===here.hash;if(active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});}
+window.addEventListener('hashchange',updateActiveNavigation);updateActiveNavigation();
